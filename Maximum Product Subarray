@@ -1,3 +1,7 @@
+//思路和最大子段和问题相似，但是乘法需要注意的是在因子的负号个数为偶数时乘积会出现整数
+//所以保存到当前位置的局部最大乘积maxSoFar
+//和到当前位置的局部最小乘积minSoFar
+
 class Solution{
 public:
 	int maxProduct(int A[], int n){
