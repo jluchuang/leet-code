@@ -1,0 +1,20 @@
+class Solution{
+public:
+	int maxProduct(int A[], int n){
+		if(A==NULL||n<=0) return 0;
+
+		int maxPro = A[0];
+		int maxSoFar = A[0];
+		int minSoFar = A[0];
+
+		for(int i=1;i<n;i++){
+			int tempMax = max(maxSoFar*A[i],max(minSoFar*A[i],A[i]));
+			int tempMin = min(maxSoFar*A[i],min(minSoFar*A[i],A[i]));
+			maxPro = max(tempMax,maxPro);
+			maxSoFar = tempMax;
+			minSoFar = tempMin;
+		}
+
+		return maxPro;
+	}
+};
